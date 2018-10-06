@@ -1,0 +1,13 @@
+interval=[-5*t 5*t];
+z=linspace(0,t);
+f1 = repmat(f(z),1,diff(interval)/t);
+T = linspace(interval(1),interval(2),length(f1));
+plot(T,f1);
+title('The Graph of f(t)');
+figure;
+T = 2;
+w = pi;
+n = 1:10;
+syms t;
+f2 = @(t)(t.^2).*(cos(n.*w.*t));
+f3 = @(t)(t.^2).*(sin(n.*w.*t));
